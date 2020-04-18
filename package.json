@@ -19,6 +19,12 @@
   "homepage": "https://github.com/zander-br/clean-node-api-typescript#readme",
   "devDependencies": {
     "@types/node": "^13.13.0",
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.20.2",
     "git-commit-msg-linter": "^2.4.2",
     "typescript": "^3.8.3"
   }
