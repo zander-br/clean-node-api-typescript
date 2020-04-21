@@ -1,9 +1,15 @@
 import { Controller, HttpRequest, HttpResponse } from '../../protocols';
 import { badRequest } from '../../helpers/http-helper';
 import { MissingParamError } from '../../errors';
+import { EmailValidator } from '../../protocols/email-validator';
 
 export class LoginController implements Controller {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  private readonly emailValidator: EmailValidator;
+
+  constructor(emailValidator: EmailValidator) {
+    this.emailValidator = emailValidator;
+  }
+
   // eslint-disable-next-line consistent-return
   async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     if (!httpRequest.body.email) {
@@ -17,5 +23,7 @@ export class LoginController implements Controller {
         badRequest(new MissingParamError('password')),
       ));
     }
+
+    this.emailValidator.isValid(httpRequest.body.email);
   }
 }
