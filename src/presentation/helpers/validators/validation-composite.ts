@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-restricted-syntax */
-import { Validation } from './validation';
+import { Validation } from '../../protocols/validation';
 
 export class ValidationComposite implements Validation {
   private readonly validations: Validation[];
