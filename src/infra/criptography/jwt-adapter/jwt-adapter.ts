@@ -11,7 +11,7 @@ export class JwtAdapter implements Encrypter {
 
   async encrypt(value: string): Promise<string> {
     // eslint-disable-next-line @typescript-eslint/await-thenable
-    await jwt.sign({ id: value }, this.secret);
-    return null;
+    const accessToken = await jwt.sign({ id: value }, this.secret);
+    return accessToken;
   }
 }
