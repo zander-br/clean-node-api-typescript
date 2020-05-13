@@ -1,10 +1,12 @@
 {
   "name": "clean-architecture",
   "version": "1.1.0",
-  "description": "",
+  "description": "NodeJs Rest API using TDD, Clean Architecture and Typescript",
   "main": "index.js",
   "scripts": {
-    "start": "sucrase-node src/main/server.ts",
+    "start": "node dist/main/server.js",
+    "build": "rimraf dist && tsc",
+    "dev": "sucrase-node src/main/server.ts",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:unit": "yarn test --watch -c jest-unit-config.js",
@@ -45,6 +47,7 @@
     "husky": "^4.2.5",
     "jest": "^25.3.0",
     "lint-staged": "^10.1.5",
+    "rimraf": "^3.0.2",
     "sucrase": "^3.13.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.4.0",
@@ -54,7 +57,6 @@
     "@types/mongodb": "^3.5.8",
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
-    "fast-glob": "^3.2.2",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.6",
     "validator": "^13.0.0"

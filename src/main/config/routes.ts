@@ -1,12 +1,14 @@
 import { Express, Router } from 'express';
-import fastGlob from 'fast-glob';
+import { readdirSync } from 'fs';
+import { resolve } from 'path';
 
 export default (app: Express): void => {
   const router = Router();
   app.use('/api', router);
 
-  fastGlob.sync('**/src/main/routes/**routes.ts').map(async (file) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    (await import(`../../../${file}`)).default(router);
+  readdirSync(resolve(__dirname, '..', 'routes')).map(async (file) => {
+    if (!file.includes('.test.')) {
+      (await import(`../routes/${file}`)).default(router);
+    }
   });
 };
