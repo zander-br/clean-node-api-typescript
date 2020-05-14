@@ -18,8 +18,8 @@
     "type": "git",
     "url": "git+https://github.com/zander-br/clean-node-api-typescript.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Clean Architecture", "Node.js", "API", "TDD", "Typescript"],
+  "author": "Anderson Santos",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zander-br/clean-node-api-typescript/issues"
